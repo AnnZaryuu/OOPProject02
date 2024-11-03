@@ -48,30 +48,30 @@ require_once 'domain_object/node_role.php' ;
         return null;
     }
     
-    public function UpdateRole($role_id,$name, $description, $role_status){
+    public function UpdateRole($role_id, $name, $description, $role_status) {
         foreach ($this->Roles as $Role) {
-            if ($this->$role_id == $role_id) {
+            if ($Role->role_id == $role_id) {
                 $Role->role_name = $name;
-                $Role->role_description= $description;
-                $Role->$role_status = $role_status;
+                $Role->role_description = $description;
+                $Role->role_status = $role_status;
                 $this->SaveToSesion();
                 return true;
             }
         }
         return false;
-    }
+    }    
 
-    public function DeleteRole($role_id){
+    public function DeleteRole($role_id) {
         foreach ($this->Roles as $key => $Role) {
-            if ($this->$role_id == $role_id) {
+            if ($Role->role_id == $role_id) { // Pastikan pengecekan ID benar
                 unset($this->Roles[$key]);
-                $this->Roles = array_values($this->Roles);
-                $this->SaveToSesion();
+                $this->Roles = array_values($this->Roles); // Reindex array setelah penghapusan
+                $this->SaveToSesion(); 
                 return true;
             }
-    }
-    return false;
-    }
+        }
+        return false;
+    }    
 
     public function getRoleByName($name){
         foreach ($this->Roles as $Role) {

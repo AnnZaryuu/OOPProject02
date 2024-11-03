@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>List Role</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-out {
+            opacity: 0;
+            transition: opacity 0.5s ease-out;
+        }
+    </style>
 </head>
 
 <body class="bg-gray-100 font-sans leading-normal tracking-normal">
@@ -51,12 +57,12 @@
                                             <td class="w-1/6 py-3 px-4"><?php echo htmlspecialchars($role->role_status); ?></td>
                                             <td class="w-1/6 py-3 px-4">
                                                 <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-2 rounded mr-2">
-                                                    <a href="edit_role.php?id=<?php echo htmlspecialchars($role->role_id); ?>">Ubah</a>
+                                                    <a href="index.php?modul=role&fitur=edit&id=<?php echo htmlspecialchars($role->role_id); ?>">Ubah</a>
                                                 </button>
-                                                <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded mr-2">
-                                                    <a href="delete_role.php?id=<?php echo htmlspecialchars($role->role_id); ?>">Hapus</a>
-                                                </button>
-                                            </td>
+                                                <button 
+                                                class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded mr-2"
+                                                onclick="confirmDelete(<?php echo htmlspecialchars($role->role_id); ?>, this)">Hapus</button>
+                                        </td>
                                         </tr>
                                 <?php endforeach; ?>
                         </tbody>
@@ -66,6 +72,17 @@
         </div>
     </div>
 
-</body>
+    <script>
+    function confirmDelete(roleId, button) {
+        if (!confirm("Apakah Anda yakin ingin menghapus Peran ini?")) return;
+        const row = button.closest("tr");
+        
+        row.classList.add("fade-out");
 
+        setTimeout(() => {
+            window.location.href = `index.php?modul=role&fitur=delete&id=${roleId}`;
+        }, 500);
+    }
+</script>
+</body>
 </html>
