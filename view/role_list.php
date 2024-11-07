@@ -11,10 +11,16 @@
             opacity: 0;
             transition: opacity 0.5s ease-out;
         }
+        .bg-custom {
+            background-image: url('assets/background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
     </style>
 </head>
 
-<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+<body class="bg-custom font-sans leading-normal tracking-normal">
 
     <!-- Navbar -->
     <?php include 'includes/navbar.php'; ?>
@@ -25,7 +31,7 @@
         <?php include 'includes/sidebar.php'; ?>
 
         <!-- Main Content -->
-        <div class="flex-1 p-8">
+        <div class="flex-1 p-8 bg-white/80 rounded-lg shadow-lg m-6">
             <!-- Konten utama -->
             <div class="container mx-auto">
                 <!-- Tombol untuk menambah peran baru -->
