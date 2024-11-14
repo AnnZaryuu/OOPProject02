@@ -1,54 +1,63 @@
 <?php
 
-require_once 'domain_object/node_role.php' ;
+require_once 'domain_object/node_role.php';
 
-    class Model_role{
-        private $Roles = [];
-        
-        private $Nextid = 1;
+class Model_role
+{
+    private $Roles = [];
 
-        public function __construct(){
-            if(isset($_SESSION['Roles'])){
-                $this->Roles = unserialize($_SESSION['Roles']);
-                $this->Nextid = count( $this->Roles ) + 1;
+    private $Nextid = 1;
+
+    public function __construct()
+    {
+        if (isset($_SESSION['Roles'])) {
+            $this->Roles = unserialize($_SESSION['Roles']);
+            $this->Nextid = count($this->Roles) + 1;
+        } else {
+            $this->initializeDefaultRole();
         }
-            else{
-                $this->initializeDefaultRole();
-            }
     }
-    public function initializeDefaultRole(){
-        $this->AddRole('Anjar','Mahasiswa', 1);
-
+    public function initializeDefaultRole()
+    {
+        $this->AddRole('Admin', 'Sebagai Admin', 1);
+        $this->AddRole('Kasir', 'Sebagai Kasir', 1);
+        $this->AddRole('Customer', 'Sebagai Customer', 1);
     }
 
-    public function AddRole($name, $description, $role_status){
-        $peran = new Role($this->Nextid++,$name, $description, $role_status);
-        $this->Roles [] = $peran;
+    public function AddRole($name, $description, $role_status)
+    {
+        $peran = new Role($this->Nextid++, $name, $description, $role_status);
+        $this->Roles[] = $peran;
         $this->SaveToSesion();
     }
 
-    private function SaveToSesion(){
-        $_SESSION['Roles'] = serialize( $this->Roles );
+    private function SaveToSesion()
+    {
+        $_SESSION['Roles'] = serialize($this->Roles);
     }
 
-    public function getRole(){
+    public function getRole()
+    {
         return $this->Roles;
     }
 
-    public function GetAllRoles(){
+    public function GetAllRoles()
+    {
         return $this->Roles;
     }
 
-    public function GetRoleById($role_id){
+    public function GetRoleById($role_id)
+    {
         foreach ($this->Roles as $Role) {
-            if($Role->role_id == $role_id){
+            if ($Role->role_id == $role_id) {
                 return $Role;
             }
         }
         return null;
     }
-    
-    public function UpdateRole($role_id, $name, $description, $role_status) {
+
+    public function UpdateRole($role_id, $name, $description, $role_status)
+    {
         foreach ($this->Roles as $Role) {
             if ($Role->role_id == $role_id) {
                 $Role->role_name = $name;
@@ -59,26 +68,27 @@ require_once 'domain_object/node_role.php' ;
             }
         }
         return false;
-    }    
+    }
 
-    public function DeleteRole($role_id) {
+    public function DeleteRole($role_id)
+    {
         foreach ($this->Roles as $key => $Role) {
             if ($Role->role_id == $role_id) { // Pastikan pengecekan ID benar
                 unset($this->Roles[$key]);
                 $this->Roles = array_values($this->Roles); // Reindex array setelah penghapusan
-                $this->SaveToSesion(); 
+                $this->SaveToSesion();
                 return true;
             }
         }
         return false;
-    }    
+    }
 
-    public function getRoleByName($name){
+    public function getRoleByName($name)
+    {
         foreach ($this->Roles as $Role) {
             if ($Role->role_name == $name) {
                 return $Role;
             }
-
         }
     }
 }

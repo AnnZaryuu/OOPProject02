@@ -5,44 +5,44 @@
             <div class="px-4 py-2 hover:bg-gray-700 cursor-pointer group-hover:bg-gray-700">
                 <a href="index.php?modul=role">Master Data Role</a>
             </div>
-<!--            <ul class="ml-4 space-y-1 hidden group-hover:block">-->
-<!--                <li class="px-4 py-2 hover:bg-gray-700 cursor-pointer">List</li>-->
-<!--                <li class="px-4 py-2 hover:bg-gray-700 cursor-pointer">Insert</li>-->
-<!--                <li class="px-4 py-2 hover:bg-gray-700 cursor-pointer">Update</li>-->
-<!--                <li class="px-4 py-2 hover:bg-gray-700 cursor-pointer">Delete</li>-->
-<!--            </ul>-->
+            <!--            <ul class="ml-4 space-y-1 hidden group-hover:block">-->
+            <!--                <li class="px-4 py-2 hover:bg-gray-700 cursor-pointer">List</li>-->
+            <!--                <li class="px-4 py-2 hover:bg-gray-700 cursor-pointer">Insert</li>-->
+            <!--                <li class="px-4 py-2 hover:bg-gray-700 cursor-pointer">Update</li>-->
+            <!--                <li class="px-4 py-2 hover:bg-gray-700 cursor-pointer">Delete</li>-->
+            <!--            </ul>-->
         </li>
         <li class="group">
             <div class="px-4 py-2 hover:bg-gray-700 cursor-pointer group-hover:bg-gray-700">
-                <a href=#>Master Data User</a>
+                <a href="index.php?modul=user">Master Data User</a>
             </div>
-<!--            <ul class="ml-4 space-y-1 hidden group-hover:block">-->
-<!--                <li class="px-4 py-2 hover:bg-gray-700 cursor-pointer">List</li>-->
-<!--                <li class="px-4 py-2 hover:bg-gray-700 cursor-pointer">Insert</li>-->
-<!--                <li class="px-4 py-2 hover:bg-gray-700 cursor-pointer">Update</li>-->
-<!--                <li class="px-4 py-2 hover:bg-gray-700 cursor-pointer">Delete</li>-->
-<!--            </ul>-->
+            <!--            <ul class="ml-4 space-y-1 hidden group-hover:block">-->
+            <!--                <li class="px-4 py-2 hover:bg-gray-700 cursor-pointer">List</li>-->
+            <!--                <li class="px-4 py-2 hover:bg-gray-700 cursor-pointer">Insert</li>-->
+            <!--                <li class="px-4 py-2 hover:bg-gray-700 cursor-pointer">Update</li>-->
+            <!--                <li class="px-4 py-2 hover:bg-gray-700 cursor-pointer">Delete</li>-->
+            <!--            </ul>-->
         </li>
         <li class="group">
         <li class="group">
             <div class="px-4 py-2 hover:bg-gray-700 cursor-pointer group-hover:bg-gray-700">
                 <a href="index.php?modul=barang">Master Data Barang</a>
             </div>
-<!--            <ul class="ml-4 space-y-1 hidden group-hover:block">-->
-<!--                <li class="px-4 py-2 hover:bg-gray-700 cursor-pointer">List</li>-->
-<!--                <li class="px-4 py-2 hover:bg-gray-700 cursor-pointer">Insert</li>-->
-<!--                <li class="px-4 py-2 hover:bg-gray-700 cursor-pointer">Update</li>-->
-<!--                <li class="px-4 py-2 hover:bg-gray-700 cursor-pointer">Delete</li>-->
-<!--            </ul>-->
+            <!--            <ul class="ml-4 space-y-1 hidden group-hover:block">-->
+            <!--                <li class="px-4 py-2 hover:bg-gray-700 cursor-pointer">List</li>-->
+            <!--                <li class="px-4 py-2 hover:bg-gray-700 cursor-pointer">Insert</li>-->
+            <!--                <li class="px-4 py-2 hover:bg-gray-700 cursor-pointer">Update</li>-->
+            <!--                <li class="px-4 py-2 hover:bg-gray-700 cursor-pointer">Delete</li>-->
+            <!--            </ul>-->
         </li>
         <li class="group">
             <div class="px-4 py-2 hover:bg-gray-700 cursor-pointer group-hover:bg-gray-700">Menu Transaksi</div>
             <ul class="ml-4 space-y-1 hidden group-hover:block">
                 <li class="px-4 py-2 hover:bg-gray-700 cursor-pointer">
-                    <a href=#>Insert Transaksi</a>
+                    <a href="index.php?modul=transaksi&fitur=add">Insert Transaksi</a>
                 </li>
                 <li class="px-4 py-2 hover:bg-gray-700 cursor-pointer">
-                    <a href=#>List Transaksi</a>
+                    <a href="index.php?modul=transaksi">List Transaksi</a>
                 </li>
 
             </ul>
