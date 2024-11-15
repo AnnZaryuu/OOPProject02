@@ -10,12 +10,55 @@ require_once 'model/model_transaksi.php';
 
 session_start();
 
-// Mendapatkan modul yang dipilih dari URL atau default ke 'dashboard'
-$modul = isset($_GET['modul']) ? $_GET['modul'] : 'dashboard';
+if (!isset($_SESSION['user_id']) && (!isset($_GET['modul']) || $_GET['modul'] != 'login')) {
+    header('Location: index.php?modul=login');
+    exit;
+}
+
+if (isset($_GET['modul'])) {
+    $modul = $_GET['modul'];
+} else {
+    $modul = 'dashboard';
+}
 
 switch ($modul) {
+    case 'login':
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $username = $_POST['user_username'];
+            $password = $_POST['user_password'];
+
+            $modelRole = new Model_role();
+            $obj_modelUser = new ModelUser($modelRole);
+
+            $user = $obj_modelUser->getUserByUsername($username);
+
+
+            if ($user && password_verify($password, $user->user_password)) {
+                $_SESSION['user_id'] = $user->user_id;
+                $_SESSION['username'] = $user->user_username;
+                $_SESSION['role'] = $user->role;
+
+                header('Location: index.php?modul=dashboard');
+                exit;
+            } else {
+                $error = "Username atau password salah!";
+            }
+        }
+        include 'view\loginpage.php';
+        break;
+
+    case 'logout':
+        // Hapus semua session
+        session_start();
+        session_unset(); // Menghapus semua variabel session
+        session_destroy();
+    
+        header('Location: index.php?modul=login');
+       break;
+    
+
     case 'dashboard':
-        include 'view/kosong.php';
+        include 'view/landingPage.php';
         break;
 
     case 'role':

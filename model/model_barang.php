@@ -16,7 +16,13 @@ class Model_barang {
     }
 
     public function initializeDefaultBarang() {
-        $this->AddBarang('Laptop', 'Elektronik', 5000000);
+        $this->AddBarang('Attack On Titan', 'Manga', 79000);
+        $this->AddBarang('Vinland Saga', 'Manga', 80000);
+        $this->AddBarang('Vagabond', 'Manga', 75000);
+        $this->AddBarang('One Piace', 'Manga', 85000);
+        $this->AddBarang('Ao no Exorcist: Kyoto Fujouou-hen', 'Manga', 97000);
+        $this->AddBarang('Tensei Shitara Slime Datta Ken', 'Manga', 120000);
+        $this->AddBarang('Black Clover', 'Manga', 10000);
     }
 
     public function AddBarang($name, $jenis, $harga) {

@@ -43,7 +43,13 @@ class ModelTransaksi
             throw new Exception("Customer atau Kasir tidak ditemukan.");
         }
 
-        $barang1 = $this->modelBarang->getBarangByName("Laptop");
+        $barang1 = $this->modelBarang->getBarangByName("Attack On Titan");
+        $barang1 = $this->modelBarang->getBarangByName("Vinland Saga");
+        $barang1 = $this->modelBarang->getBarangByName("Vagabond");
+        $barang1 = $this->modelBarang->getBarangByName("One Piace");
+        $barang1 = $this->modelBarang->getBarangByName("Ao no Exorcist: Kyoto Fujouou-hen");
+        $barang1 = $this->modelBarang->getBarangByName("Tensei Shitara Slime Datta Ken");
+        $barang1 = $this->modelBarang->getBarangByName("Black Clover");
 
         if (!$barang1) {
             throw new Exception("Barang tidak ditemukan.");

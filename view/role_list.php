@@ -27,23 +27,15 @@
 
     <!-- Main container -->
     <div class="flex">
-        <!-- Sidebar -->
-        <?php include 'includes/sidebar.php'; ?>
 
         <!-- Main Content -->
-        <div class="flex-1 p-8 bg-white/80 rounded-lg shadow-lg m-6">
+        <div class="flex-1 p-8 bg-sky-950 rounded-lg shadow-lg m-6">
             <!-- Konten utama -->
             <div class="container mx-auto">
-                <!-- Tombol untuk menambah peran baru -->
-                <div class="mb-4">
-                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                        <a href="view/role_input.php">Tambah Peran Baru</a>
-                    </button>
-                </div>
 
                 <!-- Tabel Daftar Peran -->
-                <div class="bg-white shadow-md rounded my-6">
-                    <table class="min-w-full bg-white grid-cols-1">
+                <div class="bg-gray-900 shadow-md rounded my-6">
+                    <table class="min-w-full bg-gray grid-cols-1">
                         <thead class="bg-gray-800 text-white">
                             <tr>
                                 <th class="w-1/12 py-3 px-4 uppercase font-semibold text-sm">ID Peran</th>
@@ -53,7 +45,7 @@
                                 <th class="w-1/6 py-3 px-4 uppercase font-semibold text-sm">Aksi</th>
                             </tr>
                         </thead>
-                        <tbody class="text-gray-700">
+                        <tbody class="text-gray-200">
                             <!-- Baris Data Dinamis -->
                                     <?php foreach ($roles as $role) : ?>
                                         <tr class="text-center">
@@ -74,8 +66,14 @@
                         </tbody>
                     </table>
                 </div>
+                </div>
             </div>
         </div>
+        <!-- Tombol untuk menambah peran baru -->
+        <div class="mb-4">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-6">
+                <a href="view/role_input.php">Tambah Peran Baru</a>
+            </button>
     </div>
 
     <script>
